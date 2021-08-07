@@ -51,6 +51,7 @@ const Services = (navigation, route) => {
       />
       <FlatList
         data={data}
+        style={{ paddingBottom: 30 }}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => {
           return (
@@ -59,7 +60,6 @@ const Services = (navigation, route) => {
                 width: Dimensions.get("window").width,
                 alignItems: "center",
                 marginTop: 20,
-                paddingBottom: 30,
               }}
             >
               <View

@@ -30,6 +30,7 @@ const ContactScreen = ({ navigation, route }) => {
   return (
     <View style={{ flex: 1, alignItems: "center", marginTop: 20 }}>
       <FlatList
+        style={{ paddingBottom: 30 }}
         data={data}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => {
