@@ -36,59 +36,67 @@ const ContactScreen = ({ navigation, route }) => {
           return (
             <View
               style={{
-                backgroundColor: "white",
-                width: Dimensions.get("window").width / 1.1,
-                height: 100,
-                marginTop: 20,
-                borderRadius: 8,
-                shadowColor: "#ccc",
-                shadowOffset: { width: 0, height: 3 },
-                shadowOpacity: 0.5,
-                shadowRadius: 5,
-                elevation: 10,
-                flexDirection: "row",
+                width: Dimensions.get("window").width,
                 alignItems: "center",
+                marginTop: 20,
               }}
             >
               <View
                 style={{
-                  width: Dimensions.get("window").width / 5,
-                  height: 80,
-                  backgroundColor: item.color,
+                  backgroundColor: "white",
+                  width: Dimensions.get("window").width / 1.1,
+                  height: 100,
 
-                  marginLeft: 10,
-                  borderRadius: 5,
-                  justifyContent: "center",
+                  borderRadius: 8,
+                  shadowColor: "#ccc",
+                  shadowOffset: { width: 0, height: 3 },
+                  shadowOpacity: 0.5,
+                  shadowRadius: 5,
+                  elevation: 10,
+                  flexDirection: "row",
                   alignItems: "center",
                 }}
               >
-                <Icon name={item.icon} color="white" size={50} />
-              </View>
-              <View
-                style={{
-                  width: Dimensions.get("window").width / 4,
-                  justifyContent: "space-between",
-                  marginLeft: 20,
-                  height: 60,
-                }}
-              >
-                <Text>{item.name}</Text>
-                <TouchableOpacity
+                <View
                   style={{
+                    width: Dimensions.get("window").width / 5,
+                    height: 80,
                     backgroundColor: item.color,
-                    padding: 5,
+
+                    marginLeft: 10,
+                    borderRadius: 5,
                     justifyContent: "center",
-                    borderRadius: 4,
                     alignItems: "center",
-                    shadowColor: "#ccc",
-                    shadowOffset: { width: 0, height: 3 },
-                    shadowOpacity: 0.8,
-                    shadowRadius: 7,
-                    elevation: 5,
                   }}
                 >
-                  <Text style={{ color: "white" }}>Connect</Text>
-                </TouchableOpacity>
+                  <Icon name={item.icon} color="white" size={50} />
+                </View>
+                <View
+                  style={{
+                    width: Dimensions.get("window").width / 4,
+                    justifyContent: "space-between",
+                    marginLeft: 20,
+                    height: 60,
+                  }}
+                >
+                  <Text>{item.name}</Text>
+                  <TouchableOpacity
+                    style={{
+                      backgroundColor: item.color,
+                      padding: 5,
+                      justifyContent: "center",
+                      borderRadius: 4,
+                      alignItems: "center",
+                      shadowColor: "#ccc",
+                      shadowOffset: { width: 0, height: 3 },
+                      shadowOpacity: 0.8,
+                      shadowRadius: 7,
+                      elevation: 5,
+                    }}
+                  >
+                    <Text style={{ color: "white" }}>Connect</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
           );

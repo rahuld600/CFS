@@ -56,60 +56,68 @@ const Services = (navigation, route) => {
           return (
             <View
               style={{
-                backgroundColor: "white",
-                width: Dimensions.get("window").width / 1.1,
-                height: 100,
-                marginTop: 20,
-                borderRadius: 8,
-                shadowColor: "#ccc",
-                shadowOffset: { width: 0, height: 3 },
-                shadowOpacity: 0.5,
-                shadowRadius: 5,
-                elevation: 10,
-                flexDirection: "row",
+                width: Dimensions.get("window").width,
                 alignItems: "center",
+                marginTop: 20,
               }}
             >
               <View
                 style={{
-                  width: Dimensions.get("window").width / 5,
-                  height: 80,
-                  backgroundColor: "#014b78",
-                  opacity: 0.5,
-                  marginLeft: 10,
-                  borderRadius: 5,
-                  justifyContent: "center",
+                  backgroundColor: "white",
+                  width: Dimensions.get("window").width / 1.1,
+                  height: 100,
+
+                  borderRadius: 8,
+                  shadowColor: "#ccc",
+                  shadowOffset: { width: 0, height: 3 },
+                  shadowOpacity: 0.5,
+                  shadowRadius: 5,
+                  elevation: 10,
+                  flexDirection: "row",
                   alignItems: "center",
                 }}
               >
-                <Icon name="warning" color="yellow" size={20} />
-                <Text style={{ color: "white" }}>Image</Text>
-              </View>
-              <View
-                style={{
-                  width: Dimensions.get("window").width / 4,
-                  justifyContent: "space-between",
-                  marginLeft: 20,
-                  height: 60,
-                }}
-              >
-                <Text>{item.name}</Text>
-                <TouchableOpacity
+                <View
                   style={{
-                    backgroundColor: "#A3A847",
-                    padding: 5,
+                    width: Dimensions.get("window").width / 5,
+                    height: 80,
+                    backgroundColor: "#014b78",
+                    opacity: 0.5,
+                    marginLeft: 10,
+                    borderRadius: 5,
                     justifyContent: "center",
-                    borderRadius: 4,
                     alignItems: "center",
-                    shadowColor: "#ccc",
-                    shadowOffset: { width: 0, height: 3 },
-                    shadowOpacity: 0.8,
-                    shadowRadius: 7,
-                    elevation: 5,
                   }}
                 >
-                  <Text style={{ color: "white" }}>Buy now</Text>
-                </TouchableOpacity>
+                  <Icon name="warning" color="yellow" size={20} />
+                  <Text style={{ color: "white" }}>Image</Text>
+                </View>
+                <View
+                  style={{
+                    width: Dimensions.get("window").width / 4,
+                    justifyContent: "space-between",
+                    marginLeft: 20,
+                    height: 60,
+                  }}
+                >
+                  <Text>{item.name}</Text>
+                  <TouchableOpacity
+                    style={{
+                      backgroundColor: "#A3A847",
+                      padding: 5,
+                      justifyContent: "center",
+                      borderRadius: 4,
+                      alignItems: "center",
+                      shadowColor: "#ccc",
+                      shadowOffset: { width: 0, height: 3 },
+                      shadowOpacity: 0.8,
+                      shadowRadius: 7,
+                      elevation: 5,
+                    }}
+                  >
+                    <Text style={{ color: "white" }}>Buy now</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
           );
@@ -134,9 +142,9 @@ const ServicesStack = ({ navigation, route }) => {
             return (
               <TouchableOpacity
                 style={{ marginLeft: 20 }}
-                onPress={() => navigation.openDrawer()}
+                onPress={() => navigation.goBack()}
               >
-                <Icon name="menu" color="white" size={25} />
+                <Icon name="arrow-back" color="white" size={25} />
               </TouchableOpacity>
             );
           },
