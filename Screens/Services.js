@@ -3,32 +3,52 @@ import {
   View,
   Text,
   TouchableOpacity,
-  FlatList,
   Dimensions,
+  FlatList,
 } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 const Stack = createStackNavigator();
 
-const ContactScreen = ({ navigation, route }) => {
+const Services = (navigation, route) => {
   const data = [
     {
       id: "1",
-      name: "WhatsApp",
-      icon: "whatsapp",
-      color: "#A3A847",
+      name: "Task1",
+      onPress: () => {},
     },
     {
       id: "2",
-      name: "Facebook",
-      icon: "facebook",
-      color: "#0F52BA",
+      name: "Task2",
+      onPress: () => {},
+    },
+    {
+      id: "3",
+      name: "Task3",
+      onPress: () => {},
+    },
+    {
+      id: "4",
+      name: "Task4",
+      onPress: () => {},
     },
   ];
+
   return (
     <View style={{ flex: 1, alignItems: "center", marginTop: 20 }}>
+      <Text style={{ fontSize: 25, fontWeight: "bold" }}>
+        {route?.params?.pageName || "WRONG_PAGE"}
+      </Text>
+      <View
+        style={{
+          backgroundColor: "#014b78",
+          width: Dimensions.get("window").width / 6,
+          height: 5,
+          marginVertical: 10,
+        }}
+      />
       <FlatList
         data={data}
         keyExtractor={(item) => item.id}
@@ -54,15 +74,16 @@ const ContactScreen = ({ navigation, route }) => {
                 style={{
                   width: Dimensions.get("window").width / 5,
                   height: 80,
-                  backgroundColor: item.color,
-
+                  backgroundColor: "#014b78",
+                  opacity: 0.5,
                   marginLeft: 10,
                   borderRadius: 5,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
               >
-                <Icon name={item.icon} color="white" size={50} />
+                <Icon name="warning" color="yellow" size={20} />
+                <Text style={{ color: "white" }}>Image</Text>
               </View>
               <View
                 style={{
@@ -75,7 +96,7 @@ const ContactScreen = ({ navigation, route }) => {
                 <Text>{item.name}</Text>
                 <TouchableOpacity
                   style={{
-                    backgroundColor: item.color,
+                    backgroundColor: "#A3A847",
                     padding: 5,
                     justifyContent: "center",
                     borderRadius: 4,
@@ -87,7 +108,7 @@ const ContactScreen = ({ navigation, route }) => {
                     elevation: 5,
                   }}
                 >
-                  <Text style={{ color: "white" }}>Connect</Text>
+                  <Text style={{ color: "white" }}>Buy now</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -98,14 +119,14 @@ const ContactScreen = ({ navigation, route }) => {
   );
 };
 
-const Contact = ({ navigation, route }) => {
+const ServicesStack = ({ navigation, route }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Contact Us"
-        component={() => ContactScreen(navigation, route)}
+        name="Coastal Facility Services"
+        component={() => Services(navigation, route)}
         options={{
-          title: "Contact Us",
+          title: "Coastal Facility Services",
           headerTitleStyle: { fontWeight: "bold", fontSize: 15 },
           headerStyle: { backgroundColor: "#014b78" },
           headerTintColor: "#fff",
@@ -132,4 +153,4 @@ const Contact = ({ navigation, route }) => {
   );
 };
 
-export default Contact;
+export default ServicesStack;

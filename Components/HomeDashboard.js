@@ -8,23 +8,32 @@ import {
 } from "react-native";
 import { Avatar } from "react-native-paper";
 
-const HomeDashboard = () => {
+const HomeDashboard = ({ navigation }) => {
   const rowsData = {
     firstRow: [
       {
         id: "1",
         name: "Manage Events",
         icon: "https://cdn0.iconfinder.com/data/icons/business-management-139/33/business-management-22-512.png",
+        onPress: () => {
+          navigation.navigate("Services", { pageName: "Event Manage" });
+        },
       },
       {
         id: "1",
         name: "Cleaning",
         icon: "https://cdn.dribbble.com/users/92827/screenshots/6184849/cleaning.png",
+        onPress: () => {
+          navigation.navigate("Services", { pageName: "Cleaning" });
+        },
       },
       {
         id: "1",
         name: "Landscaping",
         icon: "https://img.icons8.com/color/452/summer-landscape.png",
+        onPress: () => {
+          navigation.navigate("Services", { pageName: "Landscapping" });
+        },
       },
     ],
     secondRow: [
@@ -32,16 +41,25 @@ const HomeDashboard = () => {
         id: "1",
         name: "Carpentry",
         icon: "https://easydrawingguides.com/wp-content/uploads/2018/11/Hammer-and-Saw-10.png",
+        onPress: () => {
+          navigation.navigate("Services", { pageName: "Carpentry Services" });
+        },
       },
       {
         id: "2",
         name: "Painting",
         icon: "https://image.flaticon.com/icons/png/512/196/196290.png",
+        onPress: () => {
+          navigation.navigate("Services", { pageName: "Painting Services" });
+        },
       },
       {
         id: "3",
         name: "Pest control",
         icon: "https://www.skpc.in/wp-content/uploads/2018/08/aphids-pest-control-icon-for-local-residential-pest-control-services-and-residential-extermination-in-green.png",
+        onPress: () => {
+          navigation.navigate("Services", { pageName: "Pest Control" });
+        },
       },
     ],
     thirdRow: [
@@ -49,16 +67,25 @@ const HomeDashboard = () => {
         id: "1",
         name: "Plumbing",
         icon: "https://icon-library.com/images/plumber-icon/plumber-icon-0.jpg",
+        onPress: () => {
+          navigation.navigate("Services", { pageName: "Plumbing Services" });
+        },
       },
       {
         id: "2",
         name: "Electrical",
         icon: "https://image.flaticon.com/icons/png/512/2654/2654057.png",
+        onPress: () => {
+          navigation.navigate("Services", { pageName: "Electrical Services" });
+        },
       },
       {
         id: "3",
         name: "Mechanical",
         icon: "https://image.flaticon.com/icons/png/512/843/843289.png",
+        onPress: () => {
+          navigation.navigate("Services", { pageName: "Mechanical Services" });
+        },
       },
     ],
   };
@@ -79,7 +106,11 @@ const HomeDashboard = () => {
       <View style={styles.optionsRow}>
         {rowsData.firstRow.map((item, index) => {
           return (
-            <TouchableOpacity style={styles.optionStyles} key={index}>
+            <TouchableOpacity
+              style={styles.optionStyles}
+              key={index}
+              onPress={item.onPress}
+            >
               <Avatar.Image
                 style={{ backgroundColor: "white" }}
                 source={{
@@ -94,7 +125,11 @@ const HomeDashboard = () => {
       <View style={styles.optionsRow}>
         {rowsData.secondRow.map((item, index) => {
           return (
-            <TouchableOpacity style={styles.optionStyles} key={index}>
+            <TouchableOpacity
+              style={styles.optionStyles}
+              key={index}
+              onPress={item.onPress}
+            >
               <Avatar.Image
                 style={{ backgroundColor: "white" }}
                 source={{
@@ -109,7 +144,11 @@ const HomeDashboard = () => {
       <View style={styles.optionsRow}>
         {rowsData.thirdRow.map((item, index) => {
           return (
-            <TouchableOpacity style={styles.optionStyles} key={index}>
+            <TouchableOpacity
+              style={styles.optionStyles}
+              key={index}
+              onPress={item.onPress}
+            >
               <Avatar.Image
                 style={{ backgroundColor: "white" }}
                 source={{

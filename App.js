@@ -1,13 +1,16 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, StatusBar } from "react-native";
 import Routes from "./routes";
 import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Routes />
-    </NavigationContainer>
+    <>
+      <StatusBar barStyle="dark-content" />
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
+    </>
   );
 }
 

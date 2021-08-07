@@ -1,25 +1,20 @@
 import React, { useEffect } from "react";
-import { StatusBar } from "expo-status-bar";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  Dimensions,
-} from "react-native";
+import { View, StyleSheet, ScrollView, LogBox, StatusBar } from "react-native";
 
 import HomeHeader from "../Components/HomeHeader";
 import HomeDashboard from "../Components/HomeDashboard";
 import Carousel from "../Components/Carousel";
 const HomePage = ({ navigation }) => {
+  useEffect(() => {
+    LogBox.ignoreAllLogs();
+  }, []);
+
   return (
     <View style={styles.container}>
       <ScrollView>
-        <StatusBar style="dark" />
         <HomeHeader navigation={navigation} />
         <Carousel />
-        <HomeDashboard />
+        <HomeDashboard navigation={navigation} />
       </ScrollView>
     </View>
   );

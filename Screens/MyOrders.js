@@ -13,7 +13,7 @@ const TopBar = () => {
     <TopTab.Navigator
       initialRouteName="Rides"
       tabBarOptions={{
-        style: { backgroundColor: "#1338be" },
+        style: { backgroundColor: "#014b78" },
         activeTintColor: "#fff",
         indicatorStyle: { backgroundColor: "yellow" },
       }}

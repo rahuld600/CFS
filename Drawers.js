@@ -8,6 +8,8 @@ import { DrawerContent } from "./DrawerContent";
 
 import Profile from "./Screens/Profile";
 import MyOrders from "./Screens/MyOrders";
+import ServicesStack from "./Screens/Services";
+import Contact from "./Screens/Contact";
 
 const Drawers = () => {
   return (
@@ -30,6 +32,12 @@ const Drawers = () => {
         component={MyOrders}
         options={{ headerShown: false }}
       />
+      <Drawer.Screen
+        name="Contact"
+        component={Contact}
+        options={{ headerShown: false }}
+      />
+      <Drawer.Screen name="Services" component={ServicesStack} />
     </Drawer.Navigator>
   );
 };

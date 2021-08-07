@@ -51,7 +51,9 @@ export function DrawerContent(props) {
       name: "Contact Us",
       color: "#E5D549",
       icon: "contact-support",
-      onPress: () => {},
+      onPress: () => {
+        props.navigation.navigate("Contact");
+      },
     },
     {
       id: "settings",

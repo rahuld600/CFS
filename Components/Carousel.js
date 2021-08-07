@@ -1,13 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import {
-  View,
-  Text,
-  Dimensions,
-  FlatList,
-  Animated,
-  StyleSheet,
-  LogBox,
-} from "react-native";
+import { View, Dimensions, FlatList, Animated, StyleSheet } from "react-native";
 import CarouselItem from "./CarouselItem";
 
 const { width, height } = Dimensions.get("window");
