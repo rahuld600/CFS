@@ -59,6 +59,7 @@ const Services = (navigation, route) => {
                 width: Dimensions.get("window").width,
                 alignItems: "center",
                 marginTop: 20,
+                paddingBottom: 30,
               }}
             >
               <View
