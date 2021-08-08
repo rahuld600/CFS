@@ -15,9 +15,7 @@ jobs:
       - uses: expo/expo-github-action@v6
         with:
           expo-version: 4.x
-          expo-packager: npm
-          expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
-          expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
-          expo-cache: true
+          username: ${{ secrets.EXPO_CLI_USERNAME }}
+          password: ${{ secrets.EXPO_CLI_PASSWORD }}
       - run: yarn install
       - run: expo publish
